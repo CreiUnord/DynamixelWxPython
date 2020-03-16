@@ -3,4 +3,4 @@
 
 Use wxFormbuilder to edit gui.fbp and generate a new gui.py file.
 
-![alt text](C:\Users\chr.esnord\PycharmProjects\DynamixelWxPython\screenshot.png)
+[https://github.com/CreiUnord/DynamixelWxPython/blob/master/screenshot.png]
