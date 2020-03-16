@@ -79,6 +79,7 @@ class RobotFrame(gui.Mainframe):
 		self.spinPos.Value = 0
 
 	def turn( self, event ):
+		# Dette giver problemer i wxPython GUI'en, men ikke som rent kommendoprompt
 		vpos = self.spinPos.GetValue()
 		Emu.moveJoint(self, self.valgtId, vpos)
 		pos = Emu.getPos(self, self.valgtId)
