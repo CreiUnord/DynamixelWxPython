@@ -3,8 +3,9 @@ from pyax12.connection import Connection
 import time
 
 class Emu():
-      
+    """Klasse til at kontrollere Dynamixel AX12 actuators"""
     def start(self):
+        """Metode til at finde USB-porten, fx COM12 på Win, ttyUSB0 på linux"""
         #self.sc = Connection(port="/dev/ttyUSB0", baudrate=57600)
         self.sc = Connection(port="/dev/ttyUSB0", baudrate=1000000)
         #self.sc = Connection(port="COM12", baudrate=1000000)
