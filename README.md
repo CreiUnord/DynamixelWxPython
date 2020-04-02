@@ -17,3 +17,7 @@ def turn( self, event ):
    pos = Emu.getPos(self, self.valgtId)
    self.txtTest.AppendText(str(self.valgtId) + ': ' + str(pos) + '\r')
 ```
+
+
+
+Se [dokumentation](html/EmuControl.html) lavet med pdoc3.
