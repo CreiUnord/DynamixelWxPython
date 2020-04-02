@@ -20,4 +20,3 @@ def turn( self, event ):
 
 
 
-Se [dokumentation](html/EmuControl.html) lavet med pdoc3.
