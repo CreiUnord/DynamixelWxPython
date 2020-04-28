@@ -1,6 +1,8 @@
 # DynamixelWxPython
 ## Basic Dynamixel Control with a wxPython GUI
 
+[Se dokumentation her.](https://creiunord.github.io/DynamixelWxPython/)
+
 Use wxFormbuilder to edit gui.fbp and generate a new gui.py file.
 
 ![Screenshot](screenshot.png)
