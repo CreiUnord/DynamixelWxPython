@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.7.5" />
-<title>EmuControl API documentation</title>
+<title>Dynamixel API documentation</title>
 <meta name="description" content="" />
 <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
 <link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
@@ -17,297 +17,32 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>EmuControl</code></h1>
+<h1 class="title">Module <code>Dynamixel</code></h1>
 </header>
 <section id="section-intro">
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">#http://pyax-12.readthedocs.io/en/latest/index.html
-from pyax12.connection import Connection
-import time
-
-class Emu():
-    &#34;&#34;&#34;Klasse til at kontrollere Dynamixel AX12 actuators&#34;&#34;&#34;
-    def start(self):
-        &#34;&#34;&#34;Metode til at finde USB-porten, fx COM12 på Win, ttyUSB0 på linux&#34;&#34;&#34;
-        #self.sc = Connection(port=&#34;/dev/ttyUSB0&#34;, baudrate=57600)
-        self.sc = Connection(port=&#34;/dev/ttyUSB0&#34;, baudrate=1000000)
-        #self.sc = Connection(port=&#34;COM12&#34;, baudrate=1000000)
-        self.sc.flush()
-
-    def scanUnits(self):
-        &#34;&#34;&#34;Scanner dynamixel motorer og returnere deres id&#39;er i en liste&#34;&#34;&#34;
-        ids = self.sc.scan()
-        return ids
-
-    def readDxl(self,ID):
-        &#34;&#34;&#34;Printer oplysninger motoren med ID&#34;&#34;&#34;
-        self.sc.flush()
-        self.sc.pretty_print_control_table(ID)
-
-    def jointMode(self,ID):
-        &#34;&#34;&#34;Skifter motoren med ID til joint mode&#34;&#34;&#34;
-        self.sc.set_cw_angle_limit(ID,0,False)
-        self.sc.set_ccw_angle_limit(ID,1023,False)
-
-    def wheelMode(self,ID):
-        &#34;&#34;&#34;Skifter motoren med ID til wheelmode&#34;&#34;&#34;
-        self.sc.set_ccw_angle_limit(ID,0,False)
-        self.sc.set_cw_angle_limit(ID,0,False)
-
-    def moveJoint(self, ID, position):
-        &#34;&#34;&#34;Flytter motoren med ID til position&#34;&#34;&#34;
-        self.sc.goto(ID, position, speed=512, degrees=True)
-        time.sleep(1)
-
-    def moveWheel(self,ID, speed):
-        &#34;&#34;&#34;Starter en motor i wheelmode med hastigheden speed&#34;&#34;&#34;
-        if speed &lt; 0:
-            if speed &lt; -1024:
-                speed = 2047
-            else:
-                speed = 1023 + -speed
-        else:
-            if speed &gt; 1023:
-                speed = 1023
-        self.sc.flush()
-        self.sc.goto(ID, 0, int(speed), degrees=False)
-
-    def stop(self):
-        &#34;&#34;&#34;Lukker forbindelsen gennem USB-porten til dynamixlerne&#34;&#34;&#34;
-        self.sc.close()
-
-    def getPos(self, ID):
-        &#34;&#34;&#34;Returnere motoren med ID&#39;s position&#34;&#34;&#34;
-        position = self.sc.get_present_position(ID, True)
-        return position</code></pre>
-</details>
 </section>
 <section>
-</section>
-<section>
-</section>
-<section>
-</section>
-<section>
-<h2 class="section-title" id="header-classes">Classes</h2>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
 <dl>
-<dt id="EmuControl.Emu"><code class="flex name class">
-<span>class <span class="ident">Emu</span></span>
-</code></dt>
+<dt><code class="name"><a title="Dynamixel.EmuControl" href="EmuControl.html">Dynamixel.EmuControl</a></code></dt>
 <dd>
-<section class="desc"><p>Klasse til at kontrollere Dynamixel AX12 actuators</p></section>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class Emu():
-    &#34;&#34;&#34;Klasse til at kontrollere Dynamixel AX12 actuators&#34;&#34;&#34;
-    def start(self):
-        &#34;&#34;&#34;Metode til at finde USB-porten, fx COM12 på Win, ttyUSB0 på linux&#34;&#34;&#34;
-        #self.sc = Connection(port=&#34;/dev/ttyUSB0&#34;, baudrate=57600)
-        self.sc = Connection(port=&#34;/dev/ttyUSB0&#34;, baudrate=1000000)
-        #self.sc = Connection(port=&#34;COM12&#34;, baudrate=1000000)
-        self.sc.flush()
-
-    def scanUnits(self):
-        &#34;&#34;&#34;Scanner dynamixel motorer og returnere deres id&#39;er i en liste&#34;&#34;&#34;
-        ids = self.sc.scan()
-        return ids
-
-    def readDxl(self,ID):
-        &#34;&#34;&#34;Printer oplysninger motoren med ID&#34;&#34;&#34;
-        self.sc.flush()
-        self.sc.pretty_print_control_table(ID)
-
-    def jointMode(self,ID):
-        &#34;&#34;&#34;Skifter motoren med ID til joint mode&#34;&#34;&#34;
-        self.sc.set_cw_angle_limit(ID,0,False)
-        self.sc.set_ccw_angle_limit(ID,1023,False)
-
-    def wheelMode(self,ID):
-        &#34;&#34;&#34;Skifter motoren med ID til wheelmode&#34;&#34;&#34;
-        self.sc.set_ccw_angle_limit(ID,0,False)
-        self.sc.set_cw_angle_limit(ID,0,False)
-
-    def moveJoint(self, ID, position):
-        &#34;&#34;&#34;Flytter motoren med ID til position&#34;&#34;&#34;
-        self.sc.goto(ID, position, speed=512, degrees=True)
-        time.sleep(1)
-
-    def moveWheel(self,ID, speed):
-        &#34;&#34;&#34;Starter en motor i wheelmode med hastigheden speed&#34;&#34;&#34;
-        if speed &lt; 0:
-            if speed &lt; -1024:
-                speed = 2047
-            else:
-                speed = 1023 + -speed
-        else:
-            if speed &gt; 1023:
-                speed = 1023
-        self.sc.flush()
-        self.sc.goto(ID, 0, int(speed), degrees=False)
-
-    def stop(self):
-        &#34;&#34;&#34;Lukker forbindelsen gennem USB-porten til dynamixlerne&#34;&#34;&#34;
-        self.sc.close()
-
-    def getPos(self, ID):
-        &#34;&#34;&#34;Returnere motoren med ID&#39;s position&#34;&#34;&#34;
-        position = self.sc.get_present_position(ID, True)
-        return position</code></pre>
-</details>
-<h3>Methods</h3>
-<dl>
-<dt id="EmuControl.Emu.getPos"><code class="name flex">
-<span>def <span class="ident">getPos</span></span>(<span>self, ID)</span>
-</code></dt>
-<dd>
-<section class="desc"><p>Returnere motoren med ID's position</p></section>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def getPos(self, ID):
-    &#34;&#34;&#34;Returnere motoren med ID&#39;s position&#34;&#34;&#34;
-    position = self.sc.get_present_position(ID, True)
-    return position</code></pre>
-</details>
+<section class="desc"></section>
 </dd>
-<dt id="EmuControl.Emu.jointMode"><code class="name flex">
-<span>def <span class="ident">jointMode</span></span>(<span>self, ID)</span>
-</code></dt>
+<dt><code class="name"><a title="Dynamixel.gui" href="gui.html">Dynamixel.gui</a></code></dt>
 <dd>
-<section class="desc"><p>Skifter motoren med ID til joint mode</p></section>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def jointMode(self,ID):
-    &#34;&#34;&#34;Skifter motoren med ID til joint mode&#34;&#34;&#34;
-    self.sc.set_cw_angle_limit(ID,0,False)
-    self.sc.set_ccw_angle_limit(ID,1023,False)</code></pre>
-</details>
+<section class="desc"></section>
 </dd>
-<dt id="EmuControl.Emu.moveJoint"><code class="name flex">
-<span>def <span class="ident">moveJoint</span></span>(<span>self, ID, position)</span>
-</code></dt>
+<dt><code class="name"><a title="Dynamixel.robot" href="robot.html">Dynamixel.robot</a></code></dt>
 <dd>
-<section class="desc"><p>Flytter motoren med ID til position</p></section>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def moveJoint(self, ID, position):
-    &#34;&#34;&#34;Flytter motoren med ID til position&#34;&#34;&#34;
-    self.sc.goto(ID, position, speed=512, degrees=True)
-    time.sleep(1)</code></pre>
-</details>
-</dd>
-<dt id="EmuControl.Emu.moveWheel"><code class="name flex">
-<span>def <span class="ident">moveWheel</span></span>(<span>self, ID, speed)</span>
-</code></dt>
-<dd>
-<section class="desc"><p>Starter en motor i wheelmode med hastigheden speed</p></section>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def moveWheel(self,ID, speed):
-    &#34;&#34;&#34;Starter en motor i wheelmode med hastigheden speed&#34;&#34;&#34;
-    if speed &lt; 0:
-        if speed &lt; -1024:
-            speed = 2047
-        else:
-            speed = 1023 + -speed
-    else:
-        if speed &gt; 1023:
-            speed = 1023
-    self.sc.flush()
-    self.sc.goto(ID, 0, int(speed), degrees=False)</code></pre>
-</details>
-</dd>
-<dt id="EmuControl.Emu.readDxl"><code class="name flex">
-<span>def <span class="ident">readDxl</span></span>(<span>self, ID)</span>
-</code></dt>
-<dd>
-<section class="desc"><p>Printer oplysninger motoren med ID</p></section>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def readDxl(self,ID):
-    &#34;&#34;&#34;Printer oplysninger motoren med ID&#34;&#34;&#34;
-    self.sc.flush()
-    self.sc.pretty_print_control_table(ID)</code></pre>
-</details>
-</dd>
-<dt id="EmuControl.Emu.scanUnits"><code class="name flex">
-<span>def <span class="ident">scanUnits</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<section class="desc"><p>Scanner dynamixel motorer og returnere deres id'er i en liste</p></section>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def scanUnits(self):
-    &#34;&#34;&#34;Scanner dynamixel motorer og returnere deres id&#39;er i en liste&#34;&#34;&#34;
-    ids = self.sc.scan()
-    return ids</code></pre>
-</details>
-</dd>
-<dt id="EmuControl.Emu.start"><code class="name flex">
-<span>def <span class="ident">start</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<section class="desc"><p>Metode til at finde USB-porten, fx COM12 på Win, ttyUSB0 på linux</p></section>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def start(self):
-    &#34;&#34;&#34;Metode til at finde USB-porten, fx COM12 på Win, ttyUSB0 på linux&#34;&#34;&#34;
-    #self.sc = Connection(port=&#34;/dev/ttyUSB0&#34;, baudrate=57600)
-    self.sc = Connection(port=&#34;/dev/ttyUSB0&#34;, baudrate=1000000)
-    #self.sc = Connection(port=&#34;COM12&#34;, baudrate=1000000)
-    self.sc.flush()</code></pre>
-</details>
-</dd>
-<dt id="EmuControl.Emu.stop"><code class="name flex">
-<span>def <span class="ident">stop</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<section class="desc"><p>Lukker forbindelsen gennem USB-porten til dynamixlerne</p></section>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def stop(self):
-    &#34;&#34;&#34;Lukker forbindelsen gennem USB-porten til dynamixlerne&#34;&#34;&#34;
-    self.sc.close()</code></pre>
-</details>
-</dd>
-<dt id="EmuControl.Emu.wheelMode"><code class="name flex">
-<span>def <span class="ident">wheelMode</span></span>(<span>self, ID)</span>
-</code></dt>
-<dd>
-<section class="desc"><p>Skifter motoren med ID til wheelmode</p></section>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def wheelMode(self,ID):
-    &#34;&#34;&#34;Skifter motoren med ID til wheelmode&#34;&#34;&#34;
-    self.sc.set_ccw_angle_limit(ID,0,False)
-    self.sc.set_cw_angle_limit(ID,0,False)</code></pre>
-</details>
+<section class="desc"></section>
 </dd>
 </dl>
-</dd>
-</dl>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
 </section>
 </article>
 <nav id="sidebar">
@@ -316,22 +51,11 @@ class Emu():
 <ul></ul>
 </div>
 <ul id="index">
-<li><h3><a href="#header-classes">Classes</a></h3>
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
 <ul>
-<li>
-<h4><code><a title="EmuControl.Emu" href="#EmuControl.Emu">Emu</a></code></h4>
-<ul class="two-column">
-<li><code><a title="EmuControl.Emu.getPos" href="#EmuControl.Emu.getPos">getPos</a></code></li>
-<li><code><a title="EmuControl.Emu.jointMode" href="#EmuControl.Emu.jointMode">jointMode</a></code></li>
-<li><code><a title="EmuControl.Emu.moveJoint" href="#EmuControl.Emu.moveJoint">moveJoint</a></code></li>
-<li><code><a title="EmuControl.Emu.moveWheel" href="#EmuControl.Emu.moveWheel">moveWheel</a></code></li>
-<li><code><a title="EmuControl.Emu.readDxl" href="#EmuControl.Emu.readDxl">readDxl</a></code></li>
-<li><code><a title="EmuControl.Emu.scanUnits" href="#EmuControl.Emu.scanUnits">scanUnits</a></code></li>
-<li><code><a title="EmuControl.Emu.start" href="#EmuControl.Emu.start">start</a></code></li>
-<li><code><a title="EmuControl.Emu.stop" href="#EmuControl.Emu.stop">stop</a></code></li>
-<li><code><a title="EmuControl.Emu.wheelMode" href="#EmuControl.Emu.wheelMode">wheelMode</a></code></li>
-</ul>
-</li>
+<li><code><a title="Dynamixel.EmuControl" href="EmuControl.html">Dynamixel.EmuControl</a></code></li>
+<li><code><a title="Dynamixel.gui" href="gui.html">Dynamixel.gui</a></code></li>
+<li><code><a title="Dynamixel.robot" href="robot.html">Dynamixel.robot</a></code></li>
 </ul>
 </li>
 </ul>

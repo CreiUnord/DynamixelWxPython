@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.7.5" />
+<title>Dynamixel.gui API documentation</title>
+<meta name="description" content="" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Dynamixel.gui</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># -*- coding: utf-8 -*-
+
+###########################################################################
+## Python code generated with wxFormBuilder (version Oct 26 2018)
+## http://www.wxformbuilder.org/
+##
+## PLEASE DO *NOT* EDIT THIS FILE!
+###########################################################################
+
+import wx
+import wx.xrc
+
+###########################################################################
+## Class Mainframe
+###########################################################################
+
+class Mainframe ( wx.Frame ):
+
+        def __init__( self, parent ):
+                wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u&#34;Test af Dynamixels&#34;, pos = wx.DefaultPosition, size = wx.Size( 574,552 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+
+                self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+
+                self.m_menubar1 = wx.MenuBar( 0 )
+                self.m_menu1 = wx.Menu()
+                self.m_menuItem1 = wx.MenuItem( self.m_menu1, wx.ID_ANY, u&#34;Exit&#34;, wx.EmptyString, wx.ITEM_NORMAL )
+                self.m_menu1.Append( self.m_menuItem1 )
+
+                self.m_menubar1.Append( self.m_menu1, u&#34;File&#34; )
+
+                self.SetMenuBar( self.m_menubar1 )
+
+                bSizer1 = wx.BoxSizer( wx.VERTICAL )
+
+                fgSizer1 = wx.FlexGridSizer( 0, 2, 0, 0 )
+                fgSizer1.SetFlexibleDirection( wx.BOTH )
+                fgSizer1.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
+
+                self.btn_checkid = wx.Button( self, wx.ID_ANY, u&#34;Find ID&#39;er&#34;, wx.DefaultPosition, wx.DefaultSize, 0 )
+                fgSizer1.Add( self.btn_checkid, 0, wx.ALL, 5 )
+
+                self.txtTest = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 400,200 ), wx.TE_MULTILINE|wx.VSCROLL )
+                fgSizer1.Add( self.txtTest, 0, wx.ALL, 5 )
+
+
+                bSizer1.Add( fgSizer1, 0, wx.EXPAND, 5 )
+
+                sbSizer1 = wx.StaticBoxSizer( wx.StaticBox( self, wx.ID_ANY, u&#34;Vælg mode&#34; ), wx.VERTICAL )
+
+                radio_modeChoices = [ u&#34;Wheel&#34;, u&#34;Joint&#34; ]
+                self.radio_mode = wx.RadioBox( sbSizer1.GetStaticBox(), wx.ID_ANY, u&#34;Modes&#34;, wx.DefaultPosition, wx.DefaultSize, radio_modeChoices, 1, wx.RA_SPECIFY_COLS )
+                self.radio_mode.SetSelection( 1 )
+                sbSizer1.Add( self.radio_mode, 0, wx.ALL, 5 )
+
+
+                bSizer1.Add( sbSizer1, 0, wx.EXPAND, 5 )
+
+                fgSizer2 = wx.FlexGridSizer( 0, 3, 0, 0 )
+                fgSizer2.SetFlexibleDirection( wx.BOTH )
+                fgSizer2.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
+
+                self.btn_koer = wx.Button( self, wx.ID_ANY, u&#34;Kør&#34;, wx.DefaultPosition, wx.DefaultSize, 0 )
+                self.btn_koer.Enable( False )
+
+                fgSizer2.Add( self.btn_koer, 0, wx.ALL, 5 )
+
+                self.btn_stop = wx.Button( self, wx.ID_ANY, u&#34;Stop&#34;, wx.DefaultPosition, wx.DefaultSize, 0 )
+                self.btn_stop.Enable( False )
+
+                fgSizer2.Add( self.btn_stop, 0, wx.ALL, 5 )
+
+                self.btn_bak = wx.Button( self, wx.ID_ANY, u&#34;Tilbage&#34;, wx.DefaultPosition, wx.DefaultSize, 0 )
+                self.btn_bak.Enable( False )
+
+                fgSizer2.Add( self.btn_bak, 0, wx.ALL, 5 )
+
+
+                bSizer1.Add( fgSizer2, 0, wx.EXPAND, 5 )
+
+                fgSizer3 = wx.FlexGridSizer( 0, 3, 0, 0 )
+                fgSizer3.SetFlexibleDirection( wx.BOTH )
+                fgSizer3.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
+
+                self.btn_m45 = wx.Button( self, wx.ID_ANY, u&#34;-45&#34;, wx.DefaultPosition, wx.DefaultSize, 0 )
+                fgSizer3.Add( self.btn_m45, 0, wx.ALL, 5 )
+
+                self.btn_midt = wx.Button( self, wx.ID_ANY, u&#34;Midt&#34;, wx.DefaultPosition, wx.DefaultSize, 0 )
+                fgSizer3.Add( self.btn_midt, 0, wx.ALL, 5 )
+
+                self.btn_p45 = wx.Button( self, wx.ID_ANY, u&#34;+45&#34;, wx.DefaultPosition, wx.DefaultSize, 0 )
+                fgSizer3.Add( self.btn_p45, 0, wx.ALL, 5 )
+
+
+                bSizer1.Add( fgSizer3, 1, wx.EXPAND, 5 )
+
+                bSizer2 = wx.BoxSizer( wx.VERTICAL )
+
+
+                bSizer1.Add( bSizer2, 1, wx.EXPAND, 5 )
+
+                bSizer4 = wx.BoxSizer( wx.VERTICAL )
+
+                self.m_staticText1 = wx.StaticText( self, wx.ID_ANY, u&#34;Vælg ID, der skal drejes:&#34;, wx.DefaultPosition, wx.DefaultSize, 0 )
+                self.m_staticText1.Wrap( -1 )
+
+                bSizer4.Add( self.m_staticText1, 0, wx.ALL, 5 )
+
+                bSizer5 = wx.BoxSizer( wx.HORIZONTAL )
+
+                choice_idChoices = [ u&#34;1&#34;, u&#34;2&#34; ]
+                self.choice_id = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, choice_idChoices, 0 )
+                self.choice_id.SetSelection( 0 )
+                bSizer5.Add( self.choice_id, 0, wx.ALL, 5 )
+
+                self.spinPos = wx.SpinCtrlDouble( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_CENTER_HORIZONTAL|wx.SP_ARROW_KEYS, -180, 180, 0, 5 )
+                self.spinPos.SetDigits( 0 )
+                bSizer5.Add( self.spinPos, 0, wx.ALL, 5 )
+
+
+                bSizer4.Add( bSizer5, 1, wx.EXPAND, 5 )
+
+
+                bSizer1.Add( bSizer4, 1, wx.EXPAND, 5 )
+
+
+                self.SetSizer( bSizer1 )
+                self.Layout()
+
+                self.Centre( wx.BOTH )
+
+                # Connect Events
+                self.Bind( wx.EVT_MENU, self.close_func, id = self.m_menuItem1.GetId() )
+                self.btn_checkid.Bind( wx.EVT_BUTTON, self.findid_func )
+                self.radio_mode.Bind( wx.EVT_RADIOBOX, self.mode_select_func )
+                self.btn_koer.Bind( wx.EVT_BUTTON, self.drive_func )
+                self.btn_stop.Bind( wx.EVT_BUTTON, self.stop_func )
+                self.btn_bak.Bind( wx.EVT_BUTTON, self.tilbage_func )
+                self.btn_m45.Bind( wx.EVT_BUTTON, self.m45_func )
+                self.btn_midt.Bind( wx.EVT_BUTTON, self.midt_func )
+                self.btn_p45.Bind( wx.EVT_BUTTON, self.p45_func )
+                self.choice_id.Bind( wx.EVT_CHOICE, self.select_id )
+                self.spinPos.Bind( wx.EVT_SPINCTRLDOUBLE, self.turn )
+
+        def __del__( self ):
+                pass
+
+
+        # Virtual event handlers, overide them in your derived class
+        def close_func( self, event ):
+                event.Skip()
+
+        def findid_func( self, event ):
+                event.Skip()
+
+        def mode_select_func( self, event ):
+                event.Skip()
+
+        def drive_func( self, event ):
+                event.Skip()
+
+        def stop_func( self, event ):
+                event.Skip()
+
+        def tilbage_func( self, event ):
+                event.Skip()
+
+        def m45_func( self, event ):
+                event.Skip()
+
+        def midt_func( self, event ):
+                event.Skip()
+
+        def p45_func( self, event ):
+                event.Skip()
+
+        def select_id( self, event ):
+                event.Skip()
+
+        def turn( self, event ):
+                event.Skip()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="Dynamixel.gui.Mainframe"><code class="flex name class">
+<span>class <span class="ident">Mainframe</span></span>
+<span>(</span><span>parent)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Frame()
+Frame(parent, id=ID_ANY, title=EmptyString, pos=DefaultPosition, size=DefaultSize, style=DEFAULT_FRAME_STYLE, name=FrameNameStr)</p>
+<p>A frame is a window whose size and position can (usually) be changed
+by the user.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Mainframe ( wx.Frame ):
+
+        def __init__( self, parent ):
+                wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u&#34;Test af Dynamixels&#34;, pos = wx.DefaultPosition, size = wx.Size( 574,552 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+
+                self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+
+                self.m_menubar1 = wx.MenuBar( 0 )
+                self.m_menu1 = wx.Menu()
+                self.m_menuItem1 = wx.MenuItem( self.m_menu1, wx.ID_ANY, u&#34;Exit&#34;, wx.EmptyString, wx.ITEM_NORMAL )
+                self.m_menu1.Append( self.m_menuItem1 )
+
+                self.m_menubar1.Append( self.m_menu1, u&#34;File&#34; )
+
+                self.SetMenuBar( self.m_menubar1 )
+
+                bSizer1 = wx.BoxSizer( wx.VERTICAL )
+
+                fgSizer1 = wx.FlexGridSizer( 0, 2, 0, 0 )
+                fgSizer1.SetFlexibleDirection( wx.BOTH )
+                fgSizer1.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
+
+                self.btn_checkid = wx.Button( self, wx.ID_ANY, u&#34;Find ID&#39;er&#34;, wx.DefaultPosition, wx.DefaultSize, 0 )
+                fgSizer1.Add( self.btn_checkid, 0, wx.ALL, 5 )
+
+                self.txtTest = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 400,200 ), wx.TE_MULTILINE|wx.VSCROLL )
+                fgSizer1.Add( self.txtTest, 0, wx.ALL, 5 )
+
+
+                bSizer1.Add( fgSizer1, 0, wx.EXPAND, 5 )
+
+                sbSizer1 = wx.StaticBoxSizer( wx.StaticBox( self, wx.ID_ANY, u&#34;Vælg mode&#34; ), wx.VERTICAL )
+
+                radio_modeChoices = [ u&#34;Wheel&#34;, u&#34;Joint&#34; ]
+                self.radio_mode = wx.RadioBox( sbSizer1.GetStaticBox(), wx.ID_ANY, u&#34;Modes&#34;, wx.DefaultPosition, wx.DefaultSize, radio_modeChoices, 1, wx.RA_SPECIFY_COLS )
+                self.radio_mode.SetSelection( 1 )
+                sbSizer1.Add( self.radio_mode, 0, wx.ALL, 5 )
+
+
+                bSizer1.Add( sbSizer1, 0, wx.EXPAND, 5 )
+
+                fgSizer2 = wx.FlexGridSizer( 0, 3, 0, 0 )
+                fgSizer2.SetFlexibleDirection( wx.BOTH )
+                fgSizer2.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
+
+                self.btn_koer = wx.Button( self, wx.ID_ANY, u&#34;Kør&#34;, wx.DefaultPosition, wx.DefaultSize, 0 )
+                self.btn_koer.Enable( False )
+
+                fgSizer2.Add( self.btn_koer, 0, wx.ALL, 5 )
+
+                self.btn_stop = wx.Button( self, wx.ID_ANY, u&#34;Stop&#34;, wx.DefaultPosition, wx.DefaultSize, 0 )
+                self.btn_stop.Enable( False )
+
+                fgSizer2.Add( self.btn_stop, 0, wx.ALL, 5 )
+
+                self.btn_bak = wx.Button( self, wx.ID_ANY, u&#34;Tilbage&#34;, wx.DefaultPosition, wx.DefaultSize, 0 )
+                self.btn_bak.Enable( False )
+
+                fgSizer2.Add( self.btn_bak, 0, wx.ALL, 5 )
+
+
+                bSizer1.Add( fgSizer2, 0, wx.EXPAND, 5 )
+
+                fgSizer3 = wx.FlexGridSizer( 0, 3, 0, 0 )
+                fgSizer3.SetFlexibleDirection( wx.BOTH )
+                fgSizer3.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
+
+                self.btn_m45 = wx.Button( self, wx.ID_ANY, u&#34;-45&#34;, wx.DefaultPosition, wx.DefaultSize, 0 )
+                fgSizer3.Add( self.btn_m45, 0, wx.ALL, 5 )
+
+                self.btn_midt = wx.Button( self, wx.ID_ANY, u&#34;Midt&#34;, wx.DefaultPosition, wx.DefaultSize, 0 )
+                fgSizer3.Add( self.btn_midt, 0, wx.ALL, 5 )
+
+                self.btn_p45 = wx.Button( self, wx.ID_ANY, u&#34;+45&#34;, wx.DefaultPosition, wx.DefaultSize, 0 )
+                fgSizer3.Add( self.btn_p45, 0, wx.ALL, 5 )
+
+
+                bSizer1.Add( fgSizer3, 1, wx.EXPAND, 5 )
+
+                bSizer2 = wx.BoxSizer( wx.VERTICAL )
+
+
+                bSizer1.Add( bSizer2, 1, wx.EXPAND, 5 )
+
+                bSizer4 = wx.BoxSizer( wx.VERTICAL )
+
+                self.m_staticText1 = wx.StaticText( self, wx.ID_ANY, u&#34;Vælg ID, der skal drejes:&#34;, wx.DefaultPosition, wx.DefaultSize, 0 )
+                self.m_staticText1.Wrap( -1 )
+
+                bSizer4.Add( self.m_staticText1, 0, wx.ALL, 5 )
+
+                bSizer5 = wx.BoxSizer( wx.HORIZONTAL )
+
+                choice_idChoices = [ u&#34;1&#34;, u&#34;2&#34; ]
+                self.choice_id = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, choice_idChoices, 0 )
+                self.choice_id.SetSelection( 0 )
+                bSizer5.Add( self.choice_id, 0, wx.ALL, 5 )
+
+                self.spinPos = wx.SpinCtrlDouble( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.ALIGN_CENTER_HORIZONTAL|wx.SP_ARROW_KEYS, -180, 180, 0, 5 )
+                self.spinPos.SetDigits( 0 )
+                bSizer5.Add( self.spinPos, 0, wx.ALL, 5 )
+
+
+                bSizer4.Add( bSizer5, 1, wx.EXPAND, 5 )
+
+
+                bSizer1.Add( bSizer4, 1, wx.EXPAND, 5 )
+
+
+                self.SetSizer( bSizer1 )
+                self.Layout()
+
+                self.Centre( wx.BOTH )
+
+                # Connect Events
+                self.Bind( wx.EVT_MENU, self.close_func, id = self.m_menuItem1.GetId() )
+                self.btn_checkid.Bind( wx.EVT_BUTTON, self.findid_func )
+                self.radio_mode.Bind( wx.EVT_RADIOBOX, self.mode_select_func )
+                self.btn_koer.Bind( wx.EVT_BUTTON, self.drive_func )
+                self.btn_stop.Bind( wx.EVT_BUTTON, self.stop_func )
+                self.btn_bak.Bind( wx.EVT_BUTTON, self.tilbage_func )
+                self.btn_m45.Bind( wx.EVT_BUTTON, self.m45_func )
+                self.btn_midt.Bind( wx.EVT_BUTTON, self.midt_func )
+                self.btn_p45.Bind( wx.EVT_BUTTON, self.p45_func )
+                self.choice_id.Bind( wx.EVT_CHOICE, self.select_id )
+                self.spinPos.Bind( wx.EVT_SPINCTRLDOUBLE, self.turn )
+
+        def __del__( self ):
+                pass
+
+
+        # Virtual event handlers, overide them in your derived class
+        def close_func( self, event ):
+                event.Skip()
+
+        def findid_func( self, event ):
+                event.Skip()
+
+        def mode_select_func( self, event ):
+                event.Skip()
+
+        def drive_func( self, event ):
+                event.Skip()
+
+        def stop_func( self, event ):
+                event.Skip()
+
+        def tilbage_func( self, event ):
+                event.Skip()
+
+        def m45_func( self, event ):
+                event.Skip()
+
+        def midt_func( self, event ):
+                event.Skip()
+
+        def p45_func( self, event ):
+                event.Skip()
+
+        def select_id( self, event ):
+                event.Skip()
+
+        def turn( self, event ):
+                event.Skip()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>wx._core.Frame</li>
+<li>wx._core.TopLevelWindow</li>
+<li>wx._core.NonOwnedWindow</li>
+<li>wx._core.Window</li>
+<li>wx._core.WindowBase</li>
+<li>wx._core.EvtHandler</li>
+<li>wx._core.Object</li>
+<li>wx._core.Trackable</li>
+<li>sip.wrapper</li>
+<li>sip.simplewrapper</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="Dynamixel.gui.Mainframe.close_func"><code class="name flex">
+<span>def <span class="ident">close_func</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def close_func( self, event ):
+        event.Skip()</code></pre>
+</details>
+</dd>
+<dt id="Dynamixel.gui.Mainframe.drive_func"><code class="name flex">
+<span>def <span class="ident">drive_func</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def drive_func( self, event ):
+        event.Skip()</code></pre>
+</details>
+</dd>
+<dt id="Dynamixel.gui.Mainframe.findid_func"><code class="name flex">
+<span>def <span class="ident">findid_func</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def findid_func( self, event ):
+        event.Skip()</code></pre>
+</details>
+</dd>
+<dt id="Dynamixel.gui.Mainframe.m45_func"><code class="name flex">
+<span>def <span class="ident">m45_func</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def m45_func( self, event ):
+        event.Skip()</code></pre>
+</details>
+</dd>
+<dt id="Dynamixel.gui.Mainframe.midt_func"><code class="name flex">
+<span>def <span class="ident">midt_func</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def midt_func( self, event ):
+        event.Skip()</code></pre>
+</details>
+</dd>
+<dt id="Dynamixel.gui.Mainframe.mode_select_func"><code class="name flex">
+<span>def <span class="ident">mode_select_func</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mode_select_func( self, event ):
+        event.Skip()</code></pre>
+</details>
+</dd>
+<dt id="Dynamixel.gui.Mainframe.p45_func"><code class="name flex">
+<span>def <span class="ident">p45_func</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def p45_func( self, event ):
+        event.Skip()</code></pre>
+</details>
+</dd>
+<dt id="Dynamixel.gui.Mainframe.select_id"><code class="name flex">
+<span>def <span class="ident">select_id</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def select_id( self, event ):
+        event.Skip()</code></pre>
+</details>
+</dd>
+<dt id="Dynamixel.gui.Mainframe.stop_func"><code class="name flex">
+<span>def <span class="ident">stop_func</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def stop_func( self, event ):
+        event.Skip()</code></pre>
+</details>
+</dd>
+<dt id="Dynamixel.gui.Mainframe.tilbage_func"><code class="name flex">
+<span>def <span class="ident">tilbage_func</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tilbage_func( self, event ):
+        event.Skip()</code></pre>
+</details>
+</dd>
+<dt id="Dynamixel.gui.Mainframe.turn"><code class="name flex">
+<span>def <span class="ident">turn</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def turn( self, event ):
+        event.Skip()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Dynamixel" href="index.html">Dynamixel</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="Dynamixel.gui.Mainframe" href="#Dynamixel.gui.Mainframe">Mainframe</a></code></h4>
+<ul class="two-column">
+<li><code><a title="Dynamixel.gui.Mainframe.close_func" href="#Dynamixel.gui.Mainframe.close_func">close_func</a></code></li>
+<li><code><a title="Dynamixel.gui.Mainframe.drive_func" href="#Dynamixel.gui.Mainframe.drive_func">drive_func</a></code></li>
+<li><code><a title="Dynamixel.gui.Mainframe.findid_func" href="#Dynamixel.gui.Mainframe.findid_func">findid_func</a></code></li>
+<li><code><a title="Dynamixel.gui.Mainframe.m45_func" href="#Dynamixel.gui.Mainframe.m45_func">m45_func</a></code></li>
+<li><code><a title="Dynamixel.gui.Mainframe.midt_func" href="#Dynamixel.gui.Mainframe.midt_func">midt_func</a></code></li>
+<li><code><a title="Dynamixel.gui.Mainframe.mode_select_func" href="#Dynamixel.gui.Mainframe.mode_select_func">mode_select_func</a></code></li>
+<li><code><a title="Dynamixel.gui.Mainframe.p45_func" href="#Dynamixel.gui.Mainframe.p45_func">p45_func</a></code></li>
+<li><code><a title="Dynamixel.gui.Mainframe.select_id" href="#Dynamixel.gui.Mainframe.select_id">select_id</a></code></li>
+<li><code><a title="Dynamixel.gui.Mainframe.stop_func" href="#Dynamixel.gui.Mainframe.stop_func">stop_func</a></code></li>
+<li><code><a title="Dynamixel.gui.Mainframe.tilbage_func" href="#Dynamixel.gui.Mainframe.tilbage_func">tilbage_func</a></code></li>
+<li><code><a title="Dynamixel.gui.Mainframe.turn" href="#Dynamixel.gui.Mainframe.turn">turn</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.7.5</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>

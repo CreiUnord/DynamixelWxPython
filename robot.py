@@ -89,4 +89,4 @@ class RobotFrame(gui.Mainframe):
 app = wx.App(False)
 frame = RobotFrame(None)
 frame.Show(True)
-app.MainLoop()
+#app.MainLoop()
