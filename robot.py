@@ -3,6 +3,7 @@ import gui
 from EmuControl import Emu
 
 class RobotFrame(gui.Mainframe):
+	"""Class til GUI"""
 	def __init__(self,parent):
 		gui.Mainframe.__init__(self,parent)
 		self.valgtId = 0
