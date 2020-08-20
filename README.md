@@ -3,6 +3,12 @@
 
 [Se dokumentation her.](https://creiunord.github.io/DynamixelWxPython/)
 
+Windows driver til *usb2ax*:
+
+https://www.ftdichip.com/Drivers/VCP.htm
+
+
+
 Use wxFormbuilder to edit gui.fbp and generate a new gui.py file.
 
 ![Screenshot](screenshot.png)
